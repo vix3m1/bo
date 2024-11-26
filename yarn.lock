@@ -2748,7 +2748,7 @@ help-me@^3.0.0:
     glob "^7.1.6"
     readable-stream "^3.6.0"
 
-hercai@^12.2.0:
+hercai@latest:
   version "12.2.0"
   resolved "https://registry.npmjs.org/hercai/-/hercai-12.2.0.tgz"
   integrity sha512-rqVUxrSnMAJZMbMS9YHJwa+NBweVvEo8lv+NqQhY1Z/SgBnoTnqRkR+DmB/XhOObcla7+s41UiL+3o6j6iFZZg==

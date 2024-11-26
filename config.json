@@ -8,7 +8,7 @@
   "allowInbox": true,
   "autoClean": true,
   "adminOnly": false,
-  "autoCensor": false,
+  "autoCensor": true,
   "encryptSt": false,
   "removeSt": false,
   "UPDATE": {
@@ -22,7 +22,7 @@
   },
   "commandDisabled": [],
   "eventDisabled": [],
-  "BOTNAME": "Bot",
+  "BOTNAME": "koli",
   "PREFIX": ".",
   "ADMINBOT": [
     ""
@@ -40,13 +40,13 @@
   "DEL_FUNCTION": false,
   "ADD_FUNCTION": true,
   "FCAOption": {
-    "forceLogin": true,
+    "forceLogin": false,
     "listenEvents": true,
-    "autoMarkDelivery": true,
-    "autoMarkRead": true,
+    "autoMarkDelivery": false,
+    "autoMarkRead": false,
     "logLevel": "error",
     "selfListen": false,
-    "userAgent": "Mozilla/5.0 (Linux; Android 9; SM-G973U Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.3"
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
   },
   "daily": {
     "cooldownTime": 43200000,
@@ -80,7 +80,7 @@
     "YOUTUBE_API": "AIzaSyDEE1-zZSRVI8lTaQOVsIAQFgL-_BJKvhk"
   },
   "menu": {
-    "autoUnsend": true,
+    "autoUnsend": false,
     "delayUnsend": 60
   }
 }

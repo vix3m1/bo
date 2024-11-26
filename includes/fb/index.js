@@ -577,9 +577,9 @@ function login(loginData, options, callback) {
 		autoMarkRead: false,
 		autoReconnect: true,
 		logRecordSize: defaultLogRecordSize,
-		online: false,
+		online: true,
 		emitReady: false,
-		userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18"
+		userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
 	};
 
 	setOptions(globalOptions, options);
