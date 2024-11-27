@@ -9,7 +9,7 @@ module.exports.config = {
   usages: "[Shows Commands]",
   cooldowns: 5,
   envConfig: {
-		autoUnsend: true,
+		autoUnsend: false,
 		delayUnsend: 60
 	}
 };
@@ -113,7 +113,7 @@ module.exports.run = async function ({ api, event, args, getText }) {
       const commandNames = categoryCommands.map((cmd) => cmd.config.name);
       
       msg += `${category.toUpperCase()
-      }\n${commandNames.join(",")}\n\n`;
+      }\n${commandNames.join(", ")}\n\n`;
     }
 
     msg += `PAGE ${currentPage} of ${totalPages}\n`;
