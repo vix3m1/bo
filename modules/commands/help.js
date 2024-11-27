@@ -19,9 +19,8 @@ module.exports.languages = {
     moduleInfo:
       "「 %1 」\n%2\n\n❯ Usage: %3\n❯ Category: %4\n❯ Waiting time: %5 seconds(s)\n❯ Permission: %6\n\n» Module code by %7 ",
     helpList:
-      `◖There are %1 commands and %2 categories on this bot.`,
-    guideList:
-      `◖Use: "%1${this.config.name} ‹command›" to know how to use that command!\n◖Type: "%1${this.config.name} ‹page_number›" to show that page contents!`,
+      `There are %1 commands and %2 categories on this bot.`,
+    guideList: "Use %1help <page_number> to show more commands.",
     user: "User",
     adminGroup: "Admin group",
     adminBot: "Admin bot",
@@ -80,7 +79,7 @@ module.exports.run = async function ({ api, event, args, getText }) {
     const categoryCount = categories.size;
 
     const categoryNames = Array.from(categories);
-    const itemsPerPage = 10;
+    const itemsPerPage = 5;
     const totalPages = Math.ceil(categoryNames.length / itemsPerPage);
 
     let currentPage = 1;
@@ -94,7 +93,7 @@ module.exports.run = async function ({ api, event, args, getText }) {
         currentPage = parsedPage;
       } else {
         return api.sendMessage(
-          `◖Oops! You went too far! Please choose a page between 1 and ${totalPages}◗`,
+          `Oops! You went too far! Please choose a page between 1 and ${totalPages}`,
           threadID,
           messageID
         );
@@ -112,55 +111,18 @@ module.exports.run = async function ({ api, event, args, getText }) {
           cmd.config.commandCategory.toLowerCase() === category
       );
       const commandNames = categoryCommands.map((cmd) => cmd.config.name);
-      const numberFont = [
-        "❶",
-        "❷",
-        "❸",
-        "❹",
-        "❺",
-        "❻",
-        "❼",
-        "❽",
-        "❾",
-        "❿",
-      ];
-      msg += `╭[ ${numberFont[i]} ]─❍ ${
-        category.charAt(0).toUpperCase() + category.slice(1)
-      }\n╰─◗ ${commandNames.join(", ")}\n\n`;
+      
+      msg += `${category.toUpperCase()
+      }\n${commandNames.join(",")}\n\n`;
     }
 
-    const numberFontPage = [
-      "❶",
-      "❷",
-      "❸",
-      "❹",
-      "❺",
-      "❻",
-      "❼",
-      "❽",
-      "❾",
-      "❿",
-      "⓫",
-      "⓬",
-      "⓭",
-      "⓮",
-      "⓯",
-      "⓰",
-      "⓱",
-      "⓲",
-      "⓳",
-      "⓴",
-    ];
-    msg += `╭ ──────── ╮
-│ Page ${numberFontPage[currentPage - 1]} of ${
-      numberFontPage[totalPages - 1]
-    } │\n╰ ──────── ╯\n`;
+    msg += `PAGE ${currentPage} of ${totalPages}\n`;
     msg += getText("helpList", commands.size, categoryCount, prefix);
 
     
     const config = require("./../../config.json")
     const msgg = {
-  body: `╭──────────────╮\n│𝖢𝗈𝗆𝗆𝖺𝗇𝖽 & 𝖢𝖺𝗍𝖾𝗀𝗈𝗋𝗒│\n╰──────────────╯\n‣ Bot Owner: ${config.DESIGN.Admin}\n\n` + msg + `\n◖Total pages available: ${totalPages}.\n` + `\n╭ ──── ╮\n│ GUIDE │\n╰ ──── ╯\n` + getText("guideList", config.PREFIX),
+  body: msg + "\n" + getText("guideList", config.PREFIX),
 };
 
     const sentMessage = await api.sendMessage(msgg, threadID, messageID);

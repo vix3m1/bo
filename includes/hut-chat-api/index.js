@@ -276,12 +276,12 @@ function login(loginData, options, callback) {
 		listenEvents: false,
 		listenTyping: false,
 		updatePresence: false,
-		forceLogin: false,
+		forceLogin: true,
 		autoMarkDelivery: true,
 		autoMarkRead: false,
 		autoReconnect: true,
 		logRecordSize: defaultLogRecordSize,
-		online: true,
+		online: false,
 		emitReady: false,
 		userAgent:"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
 	};

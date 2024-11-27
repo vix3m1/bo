@@ -4,7 +4,7 @@
   "useEnvForCredentials": false,
   "envGuide": "When useEnvForCredentials enabled, it will use the process.env key provided for email and password, which helps hide your credentials, you can find env in render's environment tab, you can also find it in replit secrets.",
   "DeveloperMode": true,
-  "autoCreateDB": true,
+  "autoCreateDB": false,
   "allowInbox": true,
   "autoClean": true,
   "adminOnly": false,
@@ -25,10 +25,10 @@
   "BOTNAME": "koli",
   "PREFIX": ".",
   "ADMINBOT": [
-    ""
+    "61563763283847"
   ],
   "DESIGN": {
-    "Title": "BotPack",
+    "Title": "lamaw",
     "Theme": "Blue",
     "Admin": "maw",
     "Setup": {
@@ -42,7 +42,7 @@
   "FCAOption": {
     "forceLogin": false,
     "listenEvents": true,
-    "autoMarkDelivery": false,
+    "autoMarkDelivery": true,
     "autoMarkRead": false,
     "logLevel": "error",
     "selfListen": false,
@@ -60,7 +60,7 @@
     "delayUnsend": 60
   },
   "adminUpdate": {
-    "autoUnsend": true,
+    "autoUnsend": false,
     "sendNoti": true,
     "timeToUnsend": 10
   },

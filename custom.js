@@ -1,6 +1,6 @@
 const logger = require('./utils/log');
 const cron = require('node-cron');
-
+const axios = require("axios")
 module.exports = async ({ api }) => {
   const minInterval = 5;
   let lastMessageTime = 0;
@@ -8,17 +8,37 @@ module.exports = async ({ api }) => {
 
   const config = {
     autoRestart: {
-      status: false,
-      time: 40,
+      status: true,
+      time: 20,
       note: 'To avoid problems, enable periodic bot restarts',
     },
     acceptPending: {
-      status: false,
+      status: true,
       time: 30,
       note: 'Approve waiting messages after a certain time',
     },
+    autoPost: {
+      status: true,
+      time: 15,
+      note: "Automatically create a post to keep the bot running."
+    }
   };
 
+  async function autoPost(config) {
+    if(config.status) {
+      cron.schedule(`*/${config.time} * * * *`, async () => {
+        logger.log(`Started autopost every ${config.time}!`, 'Auto Post')
+        try {
+          const {data: result} = await axios.get("https://dummyjson.com/quotes/random");
+        
+        await api.createPost(`[ ${result.author} ]\n\n— ${result.quote}`)
+        } catch (e) {
+          console.error(e)
+        }
+        
+      })
+    }
+  }
   function autoRestart(config) {
     if (config.status) {
       cron.schedule(`*/${config.time} * * * *`, () => {
@@ -41,7 +61,7 @@ module.exports = async ({ api }) => {
       });
     }
   }
-
+  autoPost(config.autoPost)
   autoRestart(config.autoRestart);
   acceptPending(config.acceptPending);
 
@@ -59,13 +79,7 @@ module.exports = async ({ api }) => {
 
       async function message(thread) {
         try {
-          api.sendMessage({
-            body: `⟩ Thank you for using BotPack!\n\n⟩ Fork Here: https://replit.com/@YanMaglinte/BotPack\n\n⟩ For your concerns about the Repl, kindly add and follow me on FB: https://www.facebook.com/yandeva.me?mibextid=ZbWKwL`
-          }, thread.threadID, (err) => {
-            if (err) return;
-            messagedThreads.add(thread.threadID);
-
-          });
+          console.log("Meh")
         } catch (error) {
           console.error("Error sending a message:", error);
         }
@@ -103,7 +117,7 @@ module.exports = async ({ api }) => {
       async function message(thread) {
         try {
           api.sendMessage({
-            body: `Hey There! How are you? ヾ(＾-＾)ノ`
+            body: `Hey There! How are you`
           }, thread.threadID, (err) => {
             if (err) return;
             messagedThreads.add(thread.threadID);
