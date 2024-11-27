@@ -20,7 +20,7 @@ module.exports = {
       imageStrm.path = "image.jpg";
       audioStrm.path = "music.mp3";
 
-      const temp = await box.reply({attachment: imageStrm});
+      const temp = await box.reply({body: "Album Cover",attachment: imageStrm});
 
       return api.sendMessage({attachment: audioStrm}, temp.threadID, temp.messageID);
       

@@ -2162,6 +2162,11 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0, end-of-stream@^1.4.1:
   dependencies:
     once "^1.4.0"
 
+enhanced-ms@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/enhanced-ms/-/enhanced-ms-3.0.0.tgz#9ed6cc323aecd6eb040bbf529d08cc35a9aa77f4"
+  integrity sha512-snksUu7ukLqwaoMQt5R6DqPgY0nyA3s/xIL+w5m+vsYJw3DDJEKRjhjAa2Lw1I+ZNbL6hZVfQ90r/58sugu09A==
+
 entities@^1.1.1, entities@~1.1.1:
   version "1.1.2"
   resolved "https://registry.npmjs.org/entities/-/entities-1.1.2.tgz"
