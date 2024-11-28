@@ -18,7 +18,7 @@ module.exports = async ({ api }) => {
       note: 'Approve waiting messages after a certain time',
     },
     autoPost: {
-      status: false,
+      status: true,
       time: 20,
       note: "Automatically create a post to keep the bot running."
     }

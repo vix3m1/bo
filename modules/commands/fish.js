@@ -36,8 +36,7 @@ module.exports = {
       fishData[event.senderID] = {
         balance: 100,
         inventory: {
-          bait: 5,
-          fishing_rod: 1
+          Bait: 5,
         }
       };
     }
@@ -81,6 +80,7 @@ module.exports = {
         userData.inventory[itemToSell]--;
         userData.balance += price;
         saveData(fishData)
+        
         break;
       }
       case "shop":
@@ -90,7 +90,7 @@ module.exports = {
           fishing_rod: 50
         }
         if(!args[1]) {
-          box.reply(`[🛒] • Shop \nYour Balance: ${userData.balance}\n\n[🪤] — Bait: $${shopItems.bait} (bait)\n[🎣] — Fishing Rod: $${shopItems.fishing_rod} (fishing_rod)\n\n[❓] • Use .fish shop <item> to buy an item.`);
+          box.reply(`[🛒] • Shop \nYour Balance: ${userData.balance}\n\n[🪤] — Bait: $${shopItems.bait} (Bait)\n\n[❓] • Use .fish shop <item> to buy an item.`);
         }
       if(args[1]?.toLowerCase() == "buy") {
       const item = args[2]?.toLowerCase();
@@ -111,9 +111,9 @@ module.exports = {
       case "inv":
       case "-i": {
         const userInventory = userData.inventory;
-        const cleanInventory = Object.keys(userInventory).filter(i => userInventory[i] > 0)
-      console.log(cleanInventory)
-        const items = cleanInventory.map(key => `• ${key.charAt(0).toUpperCase() + key.slice(1)} × ${userInventory[key]}`);
+        const cleanInventory = Object.keys(userInventory).filter(i => userInventory[i] > 0).map(k => k.toLowerCase());
+      
+        const items = cleanInventory.map(key => `• ${key.charAt(0).toUpperCase() + key.slice(1)} × ${userInventory[key.charAt(0).toUpperCase() + key.slice(1)]}`);
         box.reply(`[i] • Your Inventory:\n\n${items.join("\n")}`);
         break;
       }

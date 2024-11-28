@@ -1,10 +1,11 @@
 {
   "61563763283847": {
-    "balance": 85,
+    "balance": 127,
     "inventory": {
-      "bait": 1,
-      "Trout": 1,
-      "Goldfish": 4
+      "Bait": 5,
+      "Fishing_rod": 1,
+      "bait": null,
+      "salmon": 0
     }
   }
 }
