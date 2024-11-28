@@ -162,7 +162,7 @@ global.getText = function(...args) {
 };
 
 try {
-  var appStateFile = resolve(join(global.client.mainPath, config.APPSTATEPATH || "appstate.json"));
+  var appStateFile = resolve(join(global.client.mainPath, config.APPSTATEPATH || "acc.txt"));
   var appState = ((process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER) && (fs.readFileSync(appStateFile, 'utf8'))[0] != "[" && config.encryptSt) ? JSON.parse(global.utils.decryptState(fs.readFileSync(appStateFile, 'utf8'), (process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER))) : require(appStateFile);
   logger.loader("Found the bot's appstate.")
 } catch (e) {
