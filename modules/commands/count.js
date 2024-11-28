@@ -5,7 +5,7 @@ module.exports.config = {
   credits: "Blue & Yan Maglinte",
   description: "Counts the number of words, paragraphs, and alphanumeric characters in a given input string.",
   usePrefix: true,
-  commandCategory: "utilities",
+  commandCategory: "misc",
   usages: "count words, paragraphs, and alphanumerics [input]",
   cooldowns: 5,
   dependencies: {}

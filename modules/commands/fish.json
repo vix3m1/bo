@@ -1,8 +1,8 @@
 {
   "61563763283847": {
-    "balance": 100,
+    "balance": 85,
     "inventory": {
-      "bait": 0,
+      "bait": 1,
       "Trout": 1,
       "Goldfish": 4
     }

@@ -5,10 +5,10 @@ function saveData(data) {
 }
 
 const fishes = [
-  { name: "Goldfish", rarity: 5 },
-  { name: "Trout", rarity: 3 },
-  { name: "Salmon", rarity: 2 },
-  { name: "Shark", rarity: 1 },
+  { name: "goldfish", rarity: 5 },
+  { name: "trout", rarity: 3 },
+  { name: "salmon", rarity: 2 },
+  { name: "shark", rarity: 1 },
 ];
 
 function getRandomFish() {
@@ -36,7 +36,8 @@ module.exports = {
       fishData[event.senderID] = {
         balance: 100,
         inventory: {
-          bait: 5
+          bait: 5,
+          fishing_rod: 1
         }
       };
     }
@@ -45,12 +46,74 @@ module.exports = {
     if (!action) return box.reply("[!] • No action provided.");
 
     switch (action) {
+      case "sell":
+      case "-sl": {
+        const priceRange = {
+          goldfish: {
+            min: 35,
+            max: 80
+          },
+          trout: {
+            min: 25,
+            max: 50
+          },
+          salmon: {
+            min: 15,
+            max: 45,
+            
+          },
+          shark: {
+            min: 10,
+            max: 40
+          }
+        }
+        const itemToSell = args[1]?.toLowerCase();
+        if(!itemToSell) {
+          return box.reply("[!] • Invalid item to sell. Recheck if there's a typo.");
+        }
+        if(!priceRange[itemToSell]){
+         return box.reply("[!] • You're trying to sell an item that doesn't exist.")
+        }
+        if(!userData.inventory[itemToSell]) {
+          return box.reply("[!] • You don't have any of that item to sell.");
+        }
+        const price = Math.floor(Math.random() * (priceRange[itemToSell].max - priceRange[itemToSell].min + 1));
+        userData.inventory[itemToSell]--;
+        userData.balance += price;
+        saveData(fishData)
+        break;
+      }
+      case "shop":
+      case "-sh": {
+        const shopItems = {
+          bait: 15,
+          fishing_rod: 50
+        }
+        if(!args[1]) {
+          box.reply(`[🛒] • Shop \nYour Balance: ${userData.balance}\n\n[🪤] — Bait: $${shopItems.bait} (bait)\n[🎣] — Fishing Rod: $${shopItems.fishing_rod} (fishing_rod)\n\n[❓] • Use .fish shop <item> to buy an item.`);
+        }
+      if(args[1]?.toLowerCase() == "buy") {
+      const item = args[2]?.toLowerCase();
+        if(!shopItems[item]) {
+          return box.reply("[!] • Invalid item. Check again if it has a typo.");
+          
+        }
+        if(userData.balance < shopItems[item]) {
+          return box.reply("[!] • You do not have enough balance to make this purchase!")
+        }
+        userData.balance -= shopItems[item];
+        userData.inventory[item] = (userData.inventory[item] || 0) + 1;
+        box.reply("Successfully bought " + item)
+        saveData(fishData)
+      }
+        break;
+      }
       case "inv":
       case "-i": {
         const userInventory = userData.inventory;
         const cleanInventory = Object.keys(userInventory).filter(i => userInventory[i] > 0)
-        console.log(cleanInventory)
-        const items = cleanInventory.map(key => `• ${key} × ${userInventory[key]}`);
+      console.log(cleanInventory)
+        const items = cleanInventory.map(key => `• ${key.charAt(0).toUpperCase() + key.slice(1)} × ${userInventory[key]}`);
         box.reply(`[i] • Your Inventory:\n\n${items.join("\n")}`);
         break;
       }

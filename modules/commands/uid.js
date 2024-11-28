@@ -5,7 +5,7 @@ module.exports.config = {
   credits: "Mirai Team",
   description: "Get the user's Facebook UID.",
   usePrefix: true,
-  commandCategory: "other",
+  commandCategory: "misc",
   cooldowns: 5
 };
 
