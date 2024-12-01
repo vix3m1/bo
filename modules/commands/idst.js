@@ -5,7 +5,7 @@ module.exports.config = {
   credits: "Sam & Yan Maglinte", // Fix the issue that causes an error when it replies to a certain message. - Yan
   description: "Shows the ID information and description of a sticker",
   usePrefix: true,
-  commandCategory: "message",
+  commandCategory: "utilities",
   usages: "[reply]",
   cooldowns: 5   
 }

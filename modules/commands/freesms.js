@@ -9,19 +9,19 @@ module.exports = {
     commandCategory: "misc",
     cooldown: 15
   },
-  run: async function({api,box,args}) {
+  run: async function({api,message,args}) {
     const input = args.join(" ").split("|");
     const number = input[0]?.trim()
-    const message = input[1].toString();
-    if(!number || !message) return box.reply("Usage: freesms <number> | <your_sms>");
+    const text = input[1].toString();
+    if(!number || !text) return message.reply("Usage: freesms <number> | <your_sms>");
     
     
     try {
-      const {data} = await axios.get(`https://api.kenliejugarap.com/freesmslbc/?number=${number}&message=${message}`)
-      return box.reply(`${data.response}\n\nSpecial thanks for Kenlie for the API.`)
+      const {data} = await axios.get(`https://api.kenliejugarap.com/freesmslbc/?number=${number}&message=${text}`)
+      return message.reply(`${data.response}\n\nSpecial thanks for Kenlie for the API.`)
     } catch (e) {
       console.error(e)
-      return box.reply("An error occured while sending your SMS. Maybe try again?");
+      return message.reply("An error occured while sending your SMS. Maybe try again?");
     }
   }
 }

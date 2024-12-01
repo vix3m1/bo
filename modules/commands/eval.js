@@ -1,31 +1,52 @@
+
 module.exports.config = {
   name: "eval",
   version: "1.0.0",
+  credits: "NTKhang",
   hasPermssion: 2,
-  credits: "Liane Cagara",
-  description: "Execute codes quickly.",
   usePrefix: true,
+  Description: "Test api response",
   commandCategory: "Admin",
-  usages: "[reply or text]",
-  cooldowns: 0,
-  dependencies: {
-
-  }
+  useges: "[code]",
+  countDowns: 5
 };
+module.exports.run = async function ({ api, args, event ,Users, Threads , message ,usersData, threadsData}) {
+  function output(msg) {
+    if (typeof msg == "number" || typeof msg == "boolean" || typeof msg == "function")
+      msg = msg.toString();
+    else if (msg instanceof Map) {
+      let text = `Map(${msg.size}) `;
+      text += JSON.stringify(mapToObj(msg), null, 2);
+      msg = text;
+    }
+    else if (typeof msg == "object")
+      msg = JSON.stringify(msg, null, 2);
+    else if (typeof msg == "undefined")
+      msg = "undefined";
 
-module.exports.run = async function({ api, args, event, box, Users, Threads, getText }) {
-  if (!box) {
-    return api.sendMessage('Unsupported Version!', event.threadID);
+    api.sendMessage(msg, event.threadID, event.messageID);
   }
-  let code = args.join(" ");
-  if (event.messageReply) {
-    code = event.messageReply.body;
+  function out(msg) {
+    output(msg);
   }
-  try {
-     eval(code);
-  } catch (error) {
-    await box.reply(`❌ Error: ${error.message}`);
-    await box.react("❌");
-    console.log(error);
+  function mapToObj(map) {
+    const obj = {};
+    map.forEach(function (v, k) {
+      obj[k] = v;
+    });
+    return obj;
   }
+  const cmd = `
+  (async () => {
+const dipto = require('axios');
+    try {
+      ${args.join(" ")}
+    }
+    catch(err) {
+      console.log("eval command", err);
+      api.sendMessage( err.stack
+      , event.threadID);
+    }
+  })()`;
+eval(cmd);
 }

@@ -7,17 +7,15 @@ module.exports = {
     allowPrefix: true,
     commandCategory: "chatbots"
   },
-  run: async function({api,box,event,args}) {
+  run: async function({api,message,event,args}) {
     const prompt = args.join(" ");
-    if(!prompt) return box.reply("Usage:\n\npixai <prompt>\nYou can also reply to an image and execute the same command to ask about the picture.")
-    const temp = await box.reply("🔎 | Searching...")
+    if(!prompt) return message.reply("Usage:\n\npixai <prompt>\nYou can also reply to an image and execute the same command to ask about the picture.")
+    const temp = await message.send("🔎 | Searching...")
     try {
       
     
     if(event.type == "message_reply" && event.messageReply.attachments[0]) {
-      console.log("IMAGE TRIGGERED")
       const url = event.messageReply.attachments[0].url;
-      console.log(url)
       const {data: result} = await axios.get(`https://api.kenliejugarap.com/pixtral-paid/?question=${prompt}&image_url=${encodeURIComponent(url)}`);
       return api.editMessage(result.response, temp.messageID);
       

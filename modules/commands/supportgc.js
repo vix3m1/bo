@@ -3,14 +3,14 @@ module.exports = {
     name: "supportgc",
     commandCategory: "assistance",
   },
-  run: async function({box,api,event}) {
+  run: async function({message,api,event}) {
     try {
       const user = event.senderID;
       
       await api.addUserToGroup(user, "8431545870306624", async (e) => {
         if(e){ 
           
-          await box.reply("An error occured while adding you to the group. Try looking at your message requests or spams.");
+          await message.reply("An error occured while adding you to the group. Try looking at your message requests or spams.");
           throw new Error(e)
              }
       })

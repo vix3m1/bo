@@ -8,7 +8,7 @@ module.exports.config = {
   credits: "Yan Maglinte",
   description: "Turn on/off automatically seen when new messages are available",
   usePrefix: true,
-  commandCategory: "Admin",
+  commandCategory: "misc",
   usages: "on/off",
   cooldowns: 5,
 };

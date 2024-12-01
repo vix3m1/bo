@@ -5,7 +5,7 @@ module.exports.config = {
   credits: "jameslim",
   description: "generate image from polination",
   usePrefix: true,
-  commandCategory: "ai",
+  commandCategory: "image",
   usages: "query",
   cooldowns: 2,
 };

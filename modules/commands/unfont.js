@@ -8,7 +8,7 @@ module.exports.config = {
   credits: "Yan Maglinte",
   description: "Removes the bot's message's font by reacting to the bot's message",
   usePrefix: true,
-  commandCategory: "message",
+  commandCategory: "misc",
   cooldowns: 2,
 };
 

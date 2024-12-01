@@ -5,7 +5,7 @@ module.exports.config = {
 	credits: "NTKhang, ManhG Fix Get",
 	description: "Report bot's error to admin or comment",
   usePrefix: true,
-	commandCategory: "report",
+	commandCategory: "support",
 	usages: "[Error encountered or comments]",
 	cooldowns: 5
 },

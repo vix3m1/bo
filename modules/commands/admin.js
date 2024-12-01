@@ -14,12 +14,6 @@ module.exports.config = {
 };
 
 module.exports.languages = {
-    "vi": {
-        "listAdmin": '⚡️ Danh sách toàn bộ người điều hành bot: \n\n%1',
-        "notHavePermssion": '⚡️ Bạn không đủ quyền hạn để có thể sử dụng chức năng "%1"',
-        "addedNewAdmin": '⚡️ Đã thêm %1 người dùng trở thành người điều hành bot:\n\n%2',
-        "removedAdmin": '⚡️Đã gỡ bỏ %1 người điều hành bot:\n\n%2'
-    },
     "en": {
         "listAdmin": '[Admin] Admin list: \n\n%1',
         "notHavePermssion": '[Admin] You have no permission to use "%1"',
@@ -62,8 +56,8 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
 
             for (const idAdmin of listAdmin) {
                 if (parseInt(idAdmin)) {
-                    const name = (await Users.getData(idAdmin)).name
-                    msg.push(`- ${name}\nLINK: https://facebook.com/${idAdmin}`);
+                    const name = (await api.getUserInfo(idAdmin))[idAdmin].name
+                    msg.push(`- ${name}\nUID: ${idAdmin}`);
                 }
             }
 
@@ -71,7 +65,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
         }
 
         case "add": {
-            if (event.senderID != 100004253741257) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
+            if (!global.config.ADMINBOT.includes(event.senderID)) return api.sendMessage(`Fuck!`, event.threadID, event.messageID)
             if (permssion != 2) return api.sendMessage(getText("notHavePermssion", "add"), threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mention.length != 0 && isNaN(content[0])) {
@@ -99,7 +93,7 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
         case "remove":
         case "rm":
         case "delete": {
-            if (event.senderID != 100004253741257) return api.sendMessage(`Quyền lồn biên giới!`, event.threadID, event.messageID)
+            if (!global.config.ADMINBOT.includes(event.senderID)) return api.sendMessage(`Fuck off!`, event.threadID, event.messageID)
             if (permssion != 2) return api.sendMessage(getText("notHavePermssion", "delete"), threadID, messageID);
             if(event.type == "message_reply") { content[0] = event.messageReply.senderID }
             if (mentions.length != 0 && isNaN(content[0])) {
@@ -130,10 +124,10 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
       //---> CODE ADMIN ONLY<---//
         if (config.adminOnly == false) {
           config.adminOnly = true;
-          api.sendMessage("» Bật thành công admin only", threadID, messageID);
+          api.sendMessage("» Successfully enabled admin only", threadID, messageID);
         } else {
           config.adminOnly = false;
-          api.sendMessage("» Tắt thành công admin only", threadID, messageID);
+          api.sendMessage("» Successfully disabled admin only", threadID, messageID);
         }
           writeFileSync(configPath, JSON.stringify(config, null, 4), 'utf8');
           break;
@@ -145,10 +139,10 @@ module.exports.run = async function ({ api, event, args, Users, permssion, getTe
         const { adminbox } = database;   
         if (adminbox[threadID] == true) {
             adminbox[threadID] = false;
-            api.sendMessage("» Tắt thành công chế độ admin (tất cả mọi người đều có thể sử dụng bot)", threadID, messageID);
+            api.sendMessage("» Admin mode successfully disabled (everyone can use bot)", threadID, messageID);
         } else {
             adminbox[threadID] = true;
-            api.sendMessage("» Bật thành công chế độ admin (chỉ admin box mới có thể sử dụng bot)", threadID, messageID);
+            api.sendMessage("» Admin mode successfully enabled (only admin box can use bot)", threadID, messageID);
         }
         writeFileSync(pathData, JSON.stringify(database, null, 4));
         break;

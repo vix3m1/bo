@@ -8,9 +8,9 @@ module.exports = {
     allowPrefix: true,
     commandCategory: "media"
   },
-  run: async function({args,box,api}) {
+  run: async function({args,message,api}) {
     const query = args.join(" ");
-    if(! query ) return box.reply("Usage: [spotify | sp ] <query>");
+    if(! query ) return message.reply("Usage: [spotify | sp ] <query>");
     try {
     const {data} = await axios.get(`https://hiroshi-api.onrender.com/tiktok/spotify?search=${query}`);
 
@@ -20,7 +20,7 @@ module.exports = {
       imageStrm.path = "image.jpg";
       audioStrm.path = "music.mp3";
 
-      const temp = await box.reply({body: "Album Cover",attachment: imageStrm});
+      const temp = await message.reply({body: "Album Cover",attachment: imageStrm});
 
       return api.sendMessage({attachment: audioStrm}, temp.threadID, temp.messageID);
       
