@@ -9,15 +9,15 @@ module.exports = {
     commandCategory: "chatbots"
     
   },
-  run: async function({api,message,args,event}) {
+  run: async function({api,box,args,event}) {
     const prompt= args.join();
-    if(!prompt) return message.reply("Usage: ai2 <prompt>");
-    const temp = await message.reply("🔎 | Searching...");
+    if(!prompt) return box.reply("Usage: ai2 <prompt>");
+    const temp = await box.reply("🔎 | Searching...");
     try {
       const {data:{response}}= await axios.get(`https://the-useless-api.vercel.app/gpt?prompt=${prompt}&uid=${event.senderID}`);
-      return api.editMessage(response, temp.messageID);
+      return api.editbox(response, temp.boxID);
     } catch (e) {
-    return  api.editMessage("An error occurred while fetching the response.", temp.messageID);
+    return  api.editbox("An error occurred while fetching the response.", temp.boxID);
     }
   }
 }

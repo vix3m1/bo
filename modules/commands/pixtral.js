@@ -7,10 +7,10 @@ module.exports = {
     allowPrefix: true,
     commandCategory: "chatbots"
   },
-  run: async function({api,message,event,args}) {
+  run: async function({api,box,event,args}) {
     const prompt = args.join(" ");
-    if(!prompt) return message.reply("Usage:\n\npixai <prompt>\nYou can also reply to an image and execute the same command to ask about the picture.")
-    const temp = await message.send("🔎 | Searching...")
+    if(!prompt) return box.reply("Usage:\n\npixai <prompt>\nYou can also reply to an image and execute the same command to ask about the picture.")
+    const temp = await box.send("🔎 | Searching...")
     try {
       
     

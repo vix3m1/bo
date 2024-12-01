@@ -20,7 +20,7 @@ module.exports = {
     cooldowns: 5,
     usages:"{pn} reply to a image"
   },
-  run: async function ({ message, event, args, api }) {
+  run: async function ({ box, event, args, api }) {
     try {
       const cp = ["bal","zombie","anime","ghost", "watercolor", "sketch", "abstract", "cartoon","monster"];
       const prompts = args[0] || cp[Math.floor(Math.random() * cp.length)];

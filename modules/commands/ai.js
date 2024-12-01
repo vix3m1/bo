@@ -15,23 +15,23 @@ module.exports.config = {
   cooldowns: 5,
 };
 
-module.exports.run = async function ({ api, event, args, message }) {
+module.exports.run = async function ({ api, event, args, box }) {
   const prompt = args.join(' ');
 
   try {
     // Available Models: "v3", "v3-32k", "turbo", "turbo-16k", "gemini"
     if (!prompt) {
-      message.reply('Please specify a message!');
-      message.react('❓');
+      box.reply('Please specify a message!');
+      box.react('❓');
     } else {
-      const info = await message.reply(`Fetching answer...`);
-      message.react('⏱️');
+      const info = await box.reply(`Fetching answer...`);
+      box.react('⏱️');
       const response = await herc.question({ model: 'v3', content: prompt });
-      await message.edit(response.reply, info.messageID);
-      message.react('');
+      await box.edit(response.reply, info.boxID);
+      box.react('');
     }
   } catch (error) {
-    message.reply('⚠️ Something went wrong: ' + error);
-    message.react('⚠️');
+    box.reply('⚠️ Something went wrong: ' + error);
+    box.react('⚠️');
   }
 };
