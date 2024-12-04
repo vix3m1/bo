@@ -15,9 +15,9 @@ module.exports = {
     const temp = await box.reply("🔎 | Searching...");
     try {
       const {data:{response}}= await axios.get(`https://the-useless-api.vercel.app/gpt?prompt=${prompt}&uid=${event.senderID}`);
-      return api.editbox(response, temp.boxID);
+      return box.edit(response, temp.boxID);
     } catch (e) {
-    return  api.editbox("An error occurred while fetching the response.", temp.boxID);
+    return  box.edit("An error occurred while fetching the response.", temp.boxID);
     }
   }
 }

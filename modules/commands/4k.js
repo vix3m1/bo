@@ -17,7 +17,10 @@ module.exports = {
     description: "Upscale your image.",
     commandCategory: "utilities",
     prefix: true,
-    usePrefix: true
+    usePrefix: true,
+    dependencies: {
+      "tinyurl": ""
+    }
   },
 
   run: async ({  args, event, api }) => {
