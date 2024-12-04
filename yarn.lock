@@ -1327,19 +1327,6 @@
   resolved "https://registry.npmjs.org/@types/tinycolor2/-/tinycolor2-1.4.6.tgz"
   integrity sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw==
 
-"@xaviabot/fca-unofficial@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.npmjs.org/@xaviabot/fca-unofficial/-/fca-unofficial-1.4.0.tgz"
-  integrity sha512-fa6f3vfrnhVsPwi56x70LCy0dbapKBmOApYc/hBD7MiU1mbnrLp1Vqruy7daz2qP3ucA1kPUKPBf/vNsXV4D1w==
-  dependencies:
-    bluebird "^2.11.0"
-    cheerio "^1.0.0-rc.12"
-    https-proxy-agent "^4.0.0"
-    mqtt "^4.3.7"
-    npmlog "^1.2.0"
-    request "^2.53.0"
-    websocket-stream "^5.5.0"
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz"
@@ -1498,6 +1485,15 @@ axios@^1.6.2, axios@^1.7.2, axios@^1.7.7:
   version "1.7.7"
   resolved "https://registry.npmjs.org/axios/-/axios-1.7.7.tgz"
   integrity sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==
+  dependencies:
+    follow-redirects "^1.15.6"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
+
+axios@^1.6.5:
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.9.tgz#d7d071380c132a24accda1b2cfc1535b79ec650a"
+  integrity sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.0"
@@ -3957,6 +3953,20 @@ rimraf@^3.0.2:
   integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   dependencies:
     glob "^7.1.3"
+
+ryuu-fca-api@:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/ryuu-fca-api/-/ryuu-fca-api-3.0.9.tgz#85c6a49a07d2019d48a7f349bd1a4853cbd4da60"
+  integrity sha512-CoyNJid7HPuBhkY2OCn8tSanT8GU/r7kyO/0fzuDMAcktSpmNohKGCPH8YRm74nBMugbaxMm4zJY1lLucb3kjQ==
+  dependencies:
+    axios "^1.6.5"
+    bluebird "^3.7.2"
+    cheerio "^0.22.0"
+    https-proxy-agent "^4.0.0"
+    mqtt "^3.0.0"
+    npmlog "^1.2.0"
+    request "^2.88.2"
+    websocket-stream "^5.5.0"
 
 safe-buffer@5.2.1, safe-buffer@^5.0.1, safe-buffer@^5.1.2:
   version "5.2.1"

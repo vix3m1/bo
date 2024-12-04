@@ -17,21 +17,28 @@ module.exports.config = {
 
 module.exports.run = async function ({ api, event, args, box }) {
   const prompt = args.join(' ');
-
-  try {
     // Available Models: "v3", "v3-32k", "turbo", "turbo-16k", "gemini"
     if (!prompt) {
-      box.reply('Please specify a message!');
       box.react('❓');
-    } else {
-      const info = await box.reply(`Fetching answer...`);
+     return box.reply('Please specify a message!');
+      
+    } 
+  await new Promise(async (resolve,rej) => {
+   const info = await box.reply(`Fetching answer...`);
       box.react('⏱️');
-      const response = await herc.question({ model: 'v3', content: prompt });
-      await box.edit(response.reply, info.boxID);
-      box.react('');
-    }
-  } catch (error) {
-    box.reply('⚠️ Something went wrong: ' + error);
-    box.react('⚠️');
-  }
+    herc.question({ model: 'v3-32k', content: prompt }).then(async res => {
+      
+          
+      api.unsendMessage(info.messageID)
+
+      resolve(box.reply(res.reply))
+      
+    }).catch(e => {
+      box.reply("[!] An error occured.")
+      rej(e)
+    })
+      
+    })
+    
+  
 };
