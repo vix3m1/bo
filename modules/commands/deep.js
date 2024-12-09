@@ -1,4 +1,4 @@
-const {get} = require("axios");
+const axios = require("axios")
 
 module.exports = {
   config: {
@@ -12,8 +12,9 @@ module.exports = {
     if(!p) return box.reply("Usage: aic <prompt>");
     const t = await box.reply("🔎 | Analyzing...")
   try {
-     const {data} = get(`https://api.joshweb.click/ai/deepseek-coder?q=${p}&uid=${event.senderID}`);
-    return api.editMessage(t.messageID, data.result)
+     const {data} = await axios.get(`https://api.joshweb.click/ai/deepseek-coder?q=${p}&uid=${event.senderID}`);
+     
+    return api.editMessage(t.messageID, data.result.trim());
   } catch (e) {
      console.error(e)
     return api.editMessage(t.messageID, "An error occured. Try again.\n\nError: " + e.response || e.data.response || e.data)
