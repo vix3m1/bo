@@ -2,10 +2,10 @@ const axios = require("axios");
 
 module.exports = {
   config: {
-    name: "pixai",
+    name: "pixai (down)",
     usePrefix: false,
     allowPrefix: true,
-    commandCategory: "chatbots"
+    commandCategory: "ai"
   },
   run: async function({api,box,event,args}) {
     const prompt = args.join(" ");

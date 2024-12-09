@@ -5542,5 +5542,41 @@
             "timestamp": 1733319441370
         },
         "lastUpdate": 1733319441370
+    },
+    "61570464441908": {
+        "userID": "61570464441908",
+        "money": 0,
+        "exp": 0,
+        "createTime": {
+            "timestamp": 1733757502155
+        },
+        "data": {
+            "timestamp": 1733757502155
+        },
+        "lastUpdate": 1733757502155
+    },
+    "100073365850863": {
+        "userID": "100073365850863",
+        "money": 0,
+        "exp": 0,
+        "createTime": {
+            "timestamp": 1733757502360
+        },
+        "data": {
+            "timestamp": 1733757502360
+        },
+        "lastUpdate": 1733757502360
+    },
+    "100074015962622": {
+        "userID": "100074015962622",
+        "money": 0,
+        "exp": 0,
+        "createTime": {
+            "timestamp": 1733757502361
+        },
+        "data": {
+            "timestamp": 1733757502361
+        },
+        "lastUpdate": 1733757502361
     }
 }

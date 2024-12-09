@@ -6,7 +6,7 @@ module.exports = {
     author: "Renz",
     usePrefix: false,
     allowPrefix: true,
-    commandCategory: "chatbots"
+    commandCategory: "ai"
     
   },
   run: async function({api,box,args,event}) {

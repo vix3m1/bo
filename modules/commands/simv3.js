@@ -7,7 +7,7 @@ module.exports.config = {
   credits: "Yan Maglinte",
   description: "Engage in conversation with Sim!",
   usePrefix: false,
-  commandCategory: "chatbots",
+  commandCategory: "ai",
   usages: "Chat with sim",
   cooldowns: 2,
 };

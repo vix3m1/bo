@@ -1,87 +1,87 @@
 {
-  "version": "1.7.6",
-  "language": "en",
-  "useEnvForCredentials": false,
-  "envGuide": "When useEnvForCredentials enabled, it will use the process.env key provided for email and password, which helps hide your credentials, you can find env in render's environment tab, you can also find it in replit secrets.",
-  "DeveloperMode": true,
-  "autoCreateDB": true,
-  "allowInbox": true,
-  "autoClean": true,
-  "adminOnly": false,
-  "autoCensor": false,
-  "encryptSt": false,
-  "removeSt": false,
-  "UPDATE": {
-    "Package": false,
-    "EXCLUDED": [
-      "chalk",
-      "mqtt",
-      "https-proxy-agent"
+    "version": "1.7.6",
+    "language": "en",
+    "useEnvForCredentials": false,
+    "envGuide": "When useEnvForCredentials enabled, it will use the process.env key provided for email and password, which helps hide your credentials, you can find env in render's environment tab, you can also find it in replit secrets.",
+    "DeveloperMode": true,
+    "autoCreateDB": true,
+    "allowInbox": true,
+    "autoClean": true,
+    "adminOnly": false,
+    "autoCensor": false,
+    "encryptSt": false,
+    "removeSt": false,
+    "UPDATE": {
+        "Package": false,
+        "EXCLUDED": [
+            "chalk",
+            "mqtt",
+            "https-proxy-agent"
+        ],
+        "Info": "This section manages the bot's automatic package updates. To disable this function, set 'Package' to false. If you only want to exclude specific packages, set them to true and add them in the 'EXCLUDED' list."
+    },
+    "commandDisabled": [],
+    "eventDisabled": [],
+    "BOTNAME": "koli",
+    "PREFIX": ".",
+    "ADMINBOT": [
+        "61563763283847"
     ],
-    "Info": "This section manages the bot's automatic package updates. To disable this function, set 'Package' to false. If you only want to exclude specific packages, set them to true and add them in the 'EXCLUDED' list."
-  },
-  "commandDisabled": [],
-  "eventDisabled": [],
-  "BOTNAME": "koli",
-  "PREFIX": ".",
-  "ADMINBOT": [
-    "61563763283847"
-  ],
-  "DESIGN": {
-    "Title": "lamaw",
-    "Theme": "Blue",
-    "Admin": "maw",
-    "Setup": {
-      "Info": "Design your own custom terminal Titlebar for the title and must contain no numbers",
-      "Theme": "Customize your console effortlessly with various theme colors. Explore Aqua, Fiery, Blue, Orange, Pink, Red, Retro, Sunlight, Teen, Summer, Flower, Ghost, Purple, Rainbow, and Hacker themes to enhance your terminal logs."
+    "DESIGN": {
+        "Title": "lamaw",
+        "Theme": "Blue",
+        "Admin": "maw",
+        "Setup": {
+            "Info": "Design your own custom terminal Titlebar for the title and must contain no numbers",
+            "Theme": "Customize your console effortlessly with various theme colors. Explore Aqua, Fiery, Blue, Orange, Pink, Red, Retro, Sunlight, Teen, Summer, Flower, Ghost, Purple, Rainbow, and Hacker themes to enhance your terminal logs."
+        }
+    },
+    "APPSTATEPATH": "appstate.json",
+    "DEL_FUNCTION": false,
+    "ADD_FUNCTION": true,
+    "FCAOption": {
+        "forceLogin": true,
+        "listenEvents": true,
+        "autoMarkDelivery": true,
+        "autoMarkRead": true,
+        "logLevel": "error",
+        "selfListen": false,
+        "online": true,
+        "userAgent": "Mozilla/5.0 (Linux; Android 9; SM-G973U Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36"
+    },
+    "daily": {
+        "cooldownTime": 43200000,
+        "rewardCoin": 500
+    },
+    "work": {
+        "cooldownTime": 1200000
+    },
+    "help": {
+        "autoUnsend": false,
+        "delayUnsend": 60
+    },
+    "adminUpdate": {
+        "autoUnsend": false,
+        "sendNoti": true,
+        "timeToUnsend": 10
+    },
+    "adminNoti": {
+        "autoUnsend": true,
+        "sendNoti": true,
+        "timeToUnsend": 10
+    },
+    "sing": {
+        "YOUTUBE_API": "AIzaSyCqox-KXEwDncsuo2HIpE0MF8J7ATln5Vc",
+        "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
+    },
+    "video": {
+        "YOUTUBE_API": "AIzaSyDEE1-zZSRVI8lTaQOVsIAQFgL-_BJKvhk"
+    },
+    "audio": {
+        "YOUTUBE_API": "AIzaSyDEE1-zZSRVI8lTaQOVsIAQFgL-_BJKvhk"
+    },
+    "menu": {
+        "autoUnsend": false,
+        "delayUnsend": 60
     }
-  },
-  "APPSTATEPATH": "appstate.json",
-  "DEL_FUNCTION": false,
-  "ADD_FUNCTION": true,
-  "FCAOption": {
-    "forceLogin": true,
-    "listenEvents": true,
-    "autoMarkDelivery": true,
-    "autoMarkRead": true,
-    "logLevel": "error",
-    "selfListen": false,
-    "online": true,
-    "userAgent": "Mozilla/5.0 (Linux; Android 9; SM-G973U Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36"
-  },
-  "daily": {
-    "cooldownTime": 43200000,
-    "rewardCoin": 500
-  },
-  "work": {
-    "cooldownTime": 1200000
-  },
-  "help": {
-    "autoUnsend": false,
-    "delayUnsend": 60
-  },
-  "adminUpdate": {
-    "autoUnsend": false,
-    "sendNoti": true,
-    "timeToUnsend": 10
-  },
-  "adminNoti": {
-    "autoUnsend": true,
-    "sendNoti": true,
-    "timeToUnsend": 10
-  },
-  "sing": {
-    "YOUTUBE_API": "AIzaSyCqox-KXEwDncsuo2HIpE0MF8J7ATln5Vc",
-    "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
-  },
-  "video": {
-    "YOUTUBE_API": "AIzaSyDEE1-zZSRVI8lTaQOVsIAQFgL-_BJKvhk"
-  },
-  "audio": {
-    "YOUTUBE_API": "AIzaSyDEE1-zZSRVI8lTaQOVsIAQFgL-_BJKvhk"
-  },
-  "menu": {
-    "autoUnsend": false,
-    "delayUnsend": 60
-  }
 }
