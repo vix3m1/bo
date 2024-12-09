@@ -14,7 +14,7 @@ module.exports.config = {
   hasPermssion: 0,
   credits: "Dipto",
   description: "Fb Vid Downloader",
-  commandCategory: "other",
+  commandCategory: "misc",
   category: "misc",
   usags: "fb video link",
   usePrefix: true,

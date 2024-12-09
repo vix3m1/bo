@@ -5,7 +5,7 @@ module.exports = {
     name: "remini",
     usePrefix: false,
     allowPrefix: true,
-    commandCategory: "tools"
+    commandCategory: "utilities"
   },
   run: async function({box,api,event}) {
     if(!event.messageReply || event.messageReply?.attachments?.length == 0) {

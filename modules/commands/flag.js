@@ -14,7 +14,7 @@ module.exports.config = {
     cooldowns: 1,
     hasPermission: 0,
     description: "Guess the flag name",
-    commandCategory: "game",
+    commandCategory: "games",
     category: "games",
     usages: "-flagGame",
     usePrefix: true,

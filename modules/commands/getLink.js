@@ -15,7 +15,7 @@ module.exports = {
     cooldowns: 2,
     hasPermission: 0,
     description: "𝗚𝗲𝘁 𝗱𝗼𝘄𝗻𝗹𝗼𝗮𝗱 𝘂𝗿𝗹 𝗳𝗿𝗼𝗺 𝘃𝗶𝗱𝗲𝗼, 𝗮𝘂𝗱𝗶𝗼 𝘀𝗲𝗻𝘁 𝗳𝗿𝗼𝗺 𝗴𝗿𝗼𝘂𝗽",
-    commandCategory: "𝗨𝗧𝗜𝗟𝗜𝗧𝗬",
+    commandCategory: "utilities",
     category: "utilities",
     usePrefix: true,
     prefix: true,

@@ -16,7 +16,7 @@ module.exports.config = {
     category: 'misc',
     usePrefix: true,
     prefix: true,
-    commandCategory: 'command',
+    commandCategory: 'misc',
     guide: { en: '[numder] [text]' }
   },
 module.exports.run = async ({ api,args})=>{

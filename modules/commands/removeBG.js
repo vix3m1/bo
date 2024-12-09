@@ -16,7 +16,7 @@ module.exports = {
         usePrefix: false,
         prefix: true,
         commandCategory: "utilities",
-        category: "utility",
+        category: "utilities",
         cooldowns: 5,
         usages: "removebg reply with a image"
     }  , 

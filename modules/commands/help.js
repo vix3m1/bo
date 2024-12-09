@@ -5,7 +5,7 @@ module.exports.config = {
   credits: "Mirai Team & Mod by Yan Maglinte",
   description: "Beginner's Guide",
   usePrefix: true,
-  commandCategory: "guide",
+  commandCategory: "info",
   usages: "[Shows Commands]",
   cooldowns: 5,
   envConfig: {
@@ -79,7 +79,7 @@ module.exports.run = async function ({ api, event, args, getText }) {
     const categoryCount = categories.size;
 
     const categoryNames = Array.from(categories);
-    const itemsPerPage = 5;
+    const itemsPerPage = 6;
     const totalPages = Math.ceil(categoryNames.length / itemsPerPage);
 
     let currentPage = 1;

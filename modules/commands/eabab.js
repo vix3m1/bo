@@ -2,9 +2,9 @@ const axios = require("axios");
 
 module.exports = {
   config: {
-    name: "eabab",
+    name: "shoti",
     usePrefix: true,
-    commandCategory: "entertainment"
+    commandCategory: "media"
   },
   run: async function({box}) {
     await box.react("🕑")

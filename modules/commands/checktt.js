@@ -5,7 +5,7 @@ module.exports.config = {
   credits: "D-Jukie",
   description: "Count messages",
   usePrefix: true,
-  commandCategory: "message",
+  commandCategory: "group",
   usages: "[tag/reply/all/all number/all box]",
   cooldowns: 5,
 };
