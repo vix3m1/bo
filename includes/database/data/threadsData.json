@@ -400,5 +400,29 @@
         "data": {
             "timestamp": 1733757502359
         }
+    },
+    "8707001386073918": {
+        "threadInfo": {
+            "threadID": "8707001386073918",
+            "threadName": null,
+            "emoji": null,
+            "adminIDs": [
+                {
+                    "id": "61563763283847"
+                }
+            ],
+            "participantIDs": [
+                "61563763283847",
+                "61570464441908",
+                "100088566740410"
+            ],
+            "isGroup": true
+        },
+        "createTime": {
+            "timestamp": 1733819567292
+        },
+        "data": {
+            "timestamp": 1733819567292
+        }
     }
 }
