@@ -5,7 +5,7 @@ module.exports = {
     name: "imaginev1",
     usePrefix: false,
     allowPrefix: true,
-    commandCategory: "ai"
+    commandCategory: "image"
   },
   run: async function({box,args}) {
     const prompt = args.join(" ");

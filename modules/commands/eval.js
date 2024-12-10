@@ -10,7 +10,7 @@ module.exports.config = {
   useges: "[code]",
   countDowns: 5
 };
-module.exports.run = async function ({ api, args, event ,Users, Threads , message ,usersData, threadsData}) {
+module.exports.run = async function ({ api,box, args, event ,Users, Threads , message ,usersData, threadsData}) {
   function output(msg) {
     if (typeof msg == "number" || typeof msg == "boolean" || typeof msg == "function")
       msg = msg.toString();

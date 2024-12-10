@@ -3,7 +3,7 @@ const moment = require("moment-timezone");
 module.exports.config = {
     name: "console",
     version: "1.0.0",
-    permission: 3,
+    hasPermission: 2,
     credits: "UPDATE BY Dipto",
     usePrefix: true,
     description: "This module logs chat events in the console.",
@@ -11,6 +11,7 @@ module.exports.config = {
     usages: "This module logs various chat events and messages for monitoring purposes.",
     cooldowns: 0
 };
+module.exports.run = () => null;
 
 module.exports.handleEvent = async function ({ api,Users, event }) {
   let { messageID, threadID, senderID } = event;

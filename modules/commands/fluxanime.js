@@ -3,7 +3,7 @@ const axios = require("axios");
 module.exports = {
   config: {
     name:"fluxv1",
-    commandCategory: "ai",
+    commandCategory: "image",
     usePrefix: true
   },
   run: async function({box,args}) {
