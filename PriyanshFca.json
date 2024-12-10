@@ -10,7 +10,7 @@
     "Login2Fa": false,
     "AutoLogin": true,
     "BroadCast": false,
-    "AuthString": "SD4S XQ32 O2JA WXB3 FUX2 OPJ7 Q7JZ 4R6Z | https://i.imgur.com/RAg3rvw.png Please remove this !, Recommend If You Using getUserInfoV2",
+    "AuthString": "",
     "EncryptFeature": false,
     "ResetDataLogin": false,
     "AutoInstallNode": false,
