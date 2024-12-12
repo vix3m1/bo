@@ -15,7 +15,7 @@ module.exports = {
       vidSt.path = Date.now() + ".mp4";
       return box.reply({body: `Title: ${result.title}\nUsername: ${result.username}`, attachment: vidSt});
     } catch (e) {
-      await box.react("❌")
+     return await box.react("❌")
     }
   }
 }

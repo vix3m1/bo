@@ -14,10 +14,11 @@ module.exports = {
     if(!prompt) return box.reply("Usage: ai2 <prompt>");
     const temp = await box.reply("🔎 | Searching...");
     try {
-      const {data:{response}}= await axios.get(`https://the-useless-api.vercel.app/gpt?prompt=${prompt}&uid=${event.senderID}`);
-      return box.edit(response, temp.boxID);
+      console.log(temp)
+      const {data:{result}}= await axios.get(`https://ace-rest-api.onrender.com/api/NVIDIA-Nemotron?q=${prompt}&id=${event.senderID}`);
+      return box.edit(result, temp.messageID);
     } catch (e) {
-    return  box.edit("An error occurred while fetching the response.", temp.boxID);
+    return  box.edit("An error occurred while fetching the response.", temp.messageID);
     }
   }
 }

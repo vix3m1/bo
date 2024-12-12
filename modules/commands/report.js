@@ -8,7 +8,7 @@ module.exports = {
     const {ADMINBOT} = require("../../config.json");
     const f = args.join(" ");
     if(!f) return box.reply("No report provided.");
-       const [{o0}] = await api.getUserInfoV5(event.senderID)
+       const [{o0}] = await api.getUserInfo(event.senderID)
 
     await new Promise((res, rej) => {
       ADMINBOT.forEach(async admin => {

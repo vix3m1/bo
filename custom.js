@@ -8,7 +8,7 @@ module.exports = async ({ api }) => {
 
   const config = {
     autoFriend: {
-      status: true,
+      status: false,
       time: 1
     },
     autoRestart: {
@@ -17,7 +17,7 @@ module.exports = async ({ api }) => {
       note: 'To avoid problems, enable periodic bot restarts',
     },
     acceptPending: {
-      status: true,
+      status: false,
       time: 30,
       note: 'Approve waiting messages after a certain time',
     },

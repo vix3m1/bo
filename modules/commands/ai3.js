@@ -12,7 +12,7 @@ module.exports = {
   if(!p) return box.reply("Usage: ai3 <prompt>")
   const t = await box.reply("🔎 | Searching...");
   try {
-   const {data:{result}} = await axios.get(`https://api.joshweb.click/ai/discolm-german?q=${p}&uid=${event.senderID}`)
+   const {data:{response}} = await axios.get(`https://ace-rest-api.onrender.com/api/mixtral-8b?q=${p}`)
    
    return api.editMessage(t.messageID, result)
   } catch(e){ 
