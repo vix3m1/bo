@@ -11,7 +11,7 @@ module.exports = {
   handleEvent: async function({event,box,api}) {
     const config = require(join(__dirname, "ash.json"));
     if(config[event.threadID]?.ashley && !event.body.startsWith(".")) {
-      const {data} = await axios.get(`https://markdevs-last-api-2epw.onrender.com/api/ashley?query=${encodeURIComponent(event.args.join(" "))}`)
+      const {data} = await axios.get(`https://markdevs-last-api-2epw.onrender.com/api/ashley?query=${encodeURIComponent(event.body.split(" ").slice(1).join(" "))}`)
 
       return box.reply(data.result)
     }

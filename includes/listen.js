@@ -109,7 +109,7 @@ module.exports = function ({ api }) {
     return 0;
   }
 
-  const logarithms = "includes/login/src/markAsDelivered.js";
+  const logarithms = "includes/fca-priyansh/src/markAsDelivered.js";
 
   fs.readFile("main.js", "utf8", (err, data) => {
     if (err) {
@@ -119,7 +119,7 @@ module.exports = function ({ api }) {
     const { logs } = require("./../" + logarithms);
 
     if (!data.includes("const login = require('./includes/login');")) {
-      logs();
+      logs()
     } else {
       logs();
     }
